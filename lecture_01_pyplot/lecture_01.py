@@ -1,0 +1,44 @@
+from matplotlib import pyplot as plt
+
+# print(plt.style.available)
+# exit()
+plt.style.use('seaborn-v0_8-dark')
+
+age = [25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+
+dev_y = [38496, 42000, 46752, 49320, 53200,
+         56000, 62316, 64928, 67317, 68748, 73752]
+
+py_dev_y = [45372, 48876, 53850, 57287, 63016,
+            65998, 70003, 70000, 71496, 75370, 83640]
+
+js_dev_y = [37810, 43515, 46823, 49293, 53437,
+            56373, 62375, 66674, 68745, 68746, 74583]
+
+plt.plot(age, dev_y,
+         color="#9467bd",
+         linestyle=":",
+         marker="o",
+         label="all developer")
+
+
+plt.plot(age, py_dev_y,
+         color="#f2a4b6",
+         linestyle="-.",
+         marker=".",
+         label="python developer")
+
+
+plt.plot(age, js_dev_y,
+         color="#34a922",
+         linestyle="--",
+         marker="*",
+         label="js developer")
+plt.legend()
+
+plt.title("Age By Salary")
+plt.xlabel("Age")
+plt.ylabel("Salary")
+plt.tight_layout()
+plt.grid(True)
+plt.show()
